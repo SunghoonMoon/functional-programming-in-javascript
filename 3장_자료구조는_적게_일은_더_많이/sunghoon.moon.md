@@ -94,16 +94,18 @@ function reduce(arr, fn, accumulator) {
 ## 3.3.4 _.filter: 원하지 않는 원소를 제거
 배열 원소를 반복하면서 술어 함수 p가 true를 반환하는 원소만 추려내고 그 결과를 새 배열에 담아 반환하는 고계함수
 ```jsx
-function reduce(arr, fn, accumulator) {
+function filter(arr, predicate) {
   let idx = -1,
-    len = arr.length
-  // 누산치를 지정하지 않으면 배열의 첫번째 원소를 초깃값으로 삼음
-  if (!accumulator && len > 0) {
-    accumulator = arr[++idx];
-  }
+    len = arr.length,
+    // 결과 배열은 입력받은 배열의 부분집합
+    result = []
+  
   while (++idx < len) {
-    // 배열을 반복하면서 원소마다 누산치, 현재 값, 인덱스, 배열을 인수로 fn을 실행함
-    accumulator = fn(accumulator, arr[idx], idx, arr)
+    let value = arr[idx];
+    // 슬어 함수 실행 결과가 true면 원소를 유지하고 false면 버림
+    if (predicate(value, idx, this)) {
+      result.push(value);
+    }
   }
   return reulst;
 }
