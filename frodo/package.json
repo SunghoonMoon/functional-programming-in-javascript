@@ -1,0 +1,11 @@
+{
+  "name": "frodo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "ramda": "^0.28.0"
+  },
+  "type": "module"
+}
