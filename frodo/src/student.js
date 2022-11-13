@@ -1,4 +1,4 @@
-class Person {
+export class Person {
   constructor(firstname, lastname, ssn) {
     this._firstname = firstname;
     this._lastname = lastname;
@@ -17,6 +17,10 @@ class Person {
 
   get lastname() {
     return this._lastname;
+  }
+
+  get fullname() {
+    return this._firstname + ' ' + this._lastname;
   }
 
   get address() {
